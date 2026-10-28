@@ -37,7 +37,9 @@ permissions:
 
 jobs:
   build:
-    uses: VOTV-MP/Multivoid/.github/workflows/build-core.yml@main
+    # UNOFFICIAL patch: the b208 tree builds with its OWN recipe (upstream main's build-core
+    # dropped the opus fallback this tree's older .gitmodules relies on).
+    uses: ./.github/workflows/build-core.yml
     with:
       ref: ${{ github.sha }}
       source-sha: ${{ github.sha }}

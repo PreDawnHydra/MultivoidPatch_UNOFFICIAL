@@ -131,6 +131,7 @@ DWORD WINAPI BootThread(LPVOID rawTag) {
     // The Paper-pair identity line: game target + build number (= kProtocolVersion).
     UE_LOGI("boot: Multivoid %s b%u", coop::version::kGameTarget,
             static_cast<unsigned>(coop::net::kProtocolVersion));
+    UE_LOGI("boot: MultivoidPatch_UNOFFICIAL (event-sync patch on b208; not an official build)");
     // Build triage line: discriminates same-proto rebuilds in bug reports
     // (banner-only -- never announced, never gated; the DLL hash stays the deploy
     // truth). The exe identity beside kGameTarget makes an install-skew report
